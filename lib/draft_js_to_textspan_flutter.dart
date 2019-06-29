@@ -5,7 +5,6 @@ import 'package:draft_js_to_textspan_flutter/model.dart';
 import 'package:flutter/material.dart';
 
 class DraftJSFlutter extends StatelessWidget {
-
   final Map<String, dynamic> map;
 
   DraftJSFlutter(this.map);
@@ -18,7 +17,9 @@ class DraftJSFlutter extends StatelessWidget {
         for (int blockIndex = 0;
             blockIndex < draftJsObject.blocks.length;
             blockIndex++) {
-          list.add(TextSpan(text: draftJsObject.blocks[blockIndex].text ?? "",style: Style.normalTextStyle));
+          list.add(TextSpan(
+              text: (draftJsObject.blocks[blockIndex].text?? "")+"\n",
+              style: Style.normalTextStyle));
         }
       }
     }
