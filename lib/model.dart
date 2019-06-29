@@ -72,7 +72,7 @@ class _EntityRange {
   static List<_EntityRange> getList(List<dynamic> map) {
     List<_EntityRange> list = List();
     for (int i = 0; i < map.length; i++) {
-      map.add(_EntityRange.fromJson(map[i]));
+      list.add(_EntityRange.fromJson(map[i]));
     }
     return list;
   }
