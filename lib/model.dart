@@ -40,6 +40,9 @@ class _InlineStyleRange {
   int length;
   String style;
 
+  bool contains(int index){
+    return offset <index&& index>(offset+length);
+  }
   _InlineStyleRange({this.offset, this.length, this.style});
 
   static List<_InlineStyleRange> getList(List<dynamic> map) {

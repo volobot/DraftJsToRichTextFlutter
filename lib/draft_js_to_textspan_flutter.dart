@@ -1,6 +1,5 @@
 library draft_js_to_textspan_flutter;
 
-import 'package:draft_js_to_textspan_flutter/Styles.dart';
 import 'package:draft_js_to_textspan_flutter/model.dart';
 import 'package:flutter/material.dart';
 
@@ -17,9 +16,49 @@ class DraftJSFlutter extends StatelessWidget {
         for (int blockIndex = 0;
             blockIndex < draftJsObject.blocks.length;
             blockIndex++) {
+          int textLength = (draftJsObject.blocks[blockIndex].text ?? "").length;
+          for (int textIndex = 0; textIndex < textLength; textIndex++) {
+            Color textColor = Colors.black;
+            FontWeight textFontWeight = FontWeight.w400;
+            FontStyle textFontStyle = FontStyle.normal;
+            TextDecoration decoration = TextDecoration.none;
+
+            for (int inlineStyleIndex = 0;
+                inlineStyleIndex <
+                    draftJsObject.blocks[blockIndex].inlineStyleRanges.length;
+                inlineStyleIndex++) {
+              if (draftJsObject
+                  .blocks[blockIndex].inlineStyleRanges[inlineStyleIndex]
+                  .contains(textIndex)) {
+                switch (draftJsObject.blocks[blockIndex]
+                    .inlineStyleRanges[inlineStyleIndex].style) {
+                  case "BOLD":
+                    textFontWeight = FontWeight.w700;
+                    break;
+                  case "ITALIC":
+                    textFontStyle = FontStyle.italic;
+                    break;
+                  case "UNDERLINE":
+                    decoration = TextDecoration.underline;
+                    break;
+                  case "STRIKETHROUGH":
+                    decoration = TextDecoration.lineThrough;
+                    break;
+                }
+              }
+            }
+            list.add(TextSpan(
+                text: draftJsObject.blocks[blockIndex].text[textIndex],
+                style: TextStyle(
+                    color: textColor,
+                    fontStyle: textFontStyle,
+                    fontWeight: textFontWeight,
+                    decoration: decoration)));
+          }
+
           list.add(TextSpan(
-              text: (draftJsObject.blocks[blockIndex].text?? "")+"\n",
-              style: Style.normalTextStyle));
+            text: "\n",
+          ));
         }
       }
     }
