@@ -1,5 +1,6 @@
 library draft_js_to_textspan_flutter;
 
+import 'package:draft_js_to_textspan_flutter/Styles.dart';
 import 'package:draft_js_to_textspan_flutter/model.dart';
 import 'package:flutter/material.dart';
 
@@ -17,7 +18,7 @@ class DraftJSFlutter extends StatelessWidget {
         for (int blockIndex = 0;
             blockIndex < draftJsObject.blocks.length;
             blockIndex++) {
-          list.add(TextSpan(text: draftJsObject.blocks[blockIndex].text ?? ""));
+          list.add(TextSpan(text: draftJsObject.blocks[blockIndex].text ?? "",style: Style.normalTextStyle));
         }
       }
     }
