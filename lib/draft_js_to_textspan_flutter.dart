@@ -1,12 +1,22 @@
 library draft_js_to_textspan_flutter;
 
 import 'package:draft_js_to_textspan_flutter/model.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class DraftJSFlutter extends StatelessWidget {
   final Map<String, dynamic> map;
 
   DraftJSFlutter(this.map);
+
+  _launchURL(String link) async {
+    if (await canLaunch(link)) {
+      await launch(link);
+    } else {
+      throw 'Could not launch $link';
+    }
+  }
 
   List<TextSpan> getTextSpans() {
     List<TextSpan> list = List();
@@ -14,19 +24,22 @@ class DraftJSFlutter extends StatelessWidget {
       DraftJsObject draftJsObject = DraftJsObject.fromJson(map);
       if (draftJsObject != null && draftJsObject.blocks != null) {
         for (int blockIndex = 0;
-            blockIndex < draftJsObject.blocks.length;
-            blockIndex++) {
-          int textLength = (draftJsObject.blocks[blockIndex].text ?? "").length;
+        blockIndex < draftJsObject.blocks.length;
+        blockIndex++) {
+          int textLength = draftJsObject.blocks[blockIndex].text != null
+              ? draftJsObject.blocks[blockIndex].text.runes.length
+              : 0;
+          print("text lenght" + textLength.toString());
           for (int textIndex = 0; textIndex < textLength; textIndex++) {
             Color textColor = Colors.black;
             FontWeight textFontWeight = FontWeight.w400;
             FontStyle textFontStyle = FontStyle.normal;
             TextDecoration decoration = TextDecoration.none;
-
+            TapGestureRecognizer recognizer;
             for (int inlineStyleIndex = 0;
-                inlineStyleIndex <
-                    draftJsObject.blocks[blockIndex].inlineStyleRanges.length;
-                inlineStyleIndex++) {
+            inlineStyleIndex <
+                draftJsObject.blocks[blockIndex].inlineStyleRanges.length;
+            inlineStyleIndex++) {
               if (draftJsObject
                   .blocks[blockIndex].inlineStyleRanges[inlineStyleIndex]
                   .contains(textIndex)) {
@@ -49,8 +62,30 @@ class DraftJSFlutter extends StatelessWidget {
                 }
               }
             }
+            for (int entityRangeIndex = 0;
+            entityRangeIndex <
+                draftJsObject.blocks[blockIndex].entityRanges.length;
+            entityRangeIndex++) {
+              if (draftJsObject
+                  .blocks[blockIndex].entityRanges[entityRangeIndex]
+                  .contains(textIndex)) {
+                textColor = Colors.blue;
+                decoration = TextDecoration.underline;
+                recognizer = TapGestureRecognizer()
+                  ..onTap = () {
+                    String key = draftJsObject
+                        .blocks[blockIndex].entityRanges[entityRangeIndex].key
+                        .toString();
+                    EntityMap entityMap = draftJsObject.entityMap[key];
+                    _launchURL(entityMap.data.url);
+                  };
+              }
+            }
             list.add(TextSpan(
-                text: draftJsObject.blocks[blockIndex].text[textIndex],
+                text: String.fromCharCode(draftJsObject
+                    .blocks[blockIndex].text.runes
+                    .toList()[textIndex]),
+                recognizer: recognizer,
                 style: TextStyle(
                     color: textColor,
                     fontStyle: textFontStyle,

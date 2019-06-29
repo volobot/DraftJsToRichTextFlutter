@@ -1,1 +1,142 @@
-{"blocks":[{"key":"4t39l","text":"Line 1: Normal message","type":"unstyled","depth":0,"inlineStyleRanges":[],"entityRanges":[],"data":{}},{"key":"1j3r0","text":"Line 2: bold italic underlined strikethrough","type":"unstyled","depth":0,"inlineStyleRanges":[{"offset":8,"length":4,"style":"BOLD"},{"offset":13,"length":6,"style":"ITALIC"},{"offset":20,"length":10,"style":"UNDERLINE"},{"offset":31,"length":13,"style":"STRIKETHROUGH"}],"entityRanges":[],"data":{}},{"key":"2d1pf","text":"Line 3: mixed styles in a sentence","type":"unstyled","depth":0,"inlineStyleRanges":[{"offset":8,"length":5,"style":"BOLD"},{"offset":21,"length":2,"style":"BOLD"},{"offset":26,"length":8,"style":"BOLD"},{"offset":8,"length":5,"style":"ITALIC"},{"offset":14,"length":6,"style":"ITALIC"},{"offset":24,"length":1,"style":"ITALIC"},{"offset":26,"length":8,"style":"ITALIC"},{"offset":14,"length":6,"style":"UNDERLINE"},{"offset":26,"length":8,"style":"UNDERLINE"},{"offset":21,"length":2,"style":"STRIKETHROUGH"},{"offset":26,"length":8,"style":"STRIKETHROUGH"}],"entityRanges":[],"data":{}},{"key":"d4btj","text":"Line 4: Link to google ","type":"unstyled","depth":0,"inlineStyleRanges":[],"entityRanges":[{"offset":16,"length":6,"key":0}],"data":{}},{"key":"2uha5","text":"Line 5: 😎😺😷🙏😌😍🍾🤗👌💪🐌🏀🎵","type":"unstyled","depth":0,"inlineStyleRanges":[],"entityRanges":[],"data":{}}],"entityMap":{"0":{"type":"LINK","mutability":"MUTABLE","data":{"url":"http://google.com","targetOption":"_self"}}}}
+{
+  "blocks": [
+    {
+      "key": "4t39l",
+      "text": "Line 1: Normal message",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "1j3r0",
+      "text": "Line 2: bold italic underlined strikethrough",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [
+        {
+          "offset": 8,
+          "length": 4,
+          "style": "BOLD"
+        },
+        {
+          "offset": 13,
+          "length": 6,
+          "style": "ITALIC"
+        },
+        {
+          "offset": 20,
+          "length": 10,
+          "style": "UNDERLINE"
+        },
+        {
+          "offset": 31,
+          "length": 13,
+          "style": "STRIKETHROUGH"
+        }
+      ],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "2d1pf",
+      "text": "Line 3: mixed styles in a sentence",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [
+        {
+          "offset": 8,
+          "length": 5,
+          "style": "BOLD"
+        },
+        {
+          "offset": 21,
+          "length": 2,
+          "style": "BOLD"
+        },
+        {
+          "offset": 26,
+          "length": 8,
+          "style": "BOLD"
+        },
+        {
+          "offset": 8,
+          "length": 5,
+          "style": "ITALIC"
+        },
+        {
+          "offset": 14,
+          "length": 6,
+          "style": "ITALIC"
+        },
+        {
+          "offset": 24,
+          "length": 1,
+          "style": "ITALIC"
+        },
+        {
+          "offset": 26,
+          "length": 8,
+          "style": "ITALIC"
+        },
+        {
+          "offset": 14,
+          "length": 6,
+          "style": "UNDERLINE"
+        },
+        {
+          "offset": 26,
+          "length": 8,
+          "style": "UNDERLINE"
+        },
+        {
+          "offset": 21,
+          "length": 2,
+          "style": "STRIKETHROUGH"
+        },
+        {
+          "offset": 26,
+          "length": 8,
+          "style": "STRIKETHROUGH"
+        }
+      ],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "d4btj",
+      "text": "Line 4: Link to google ",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [
+        {
+          "offset": 16,
+          "length": 6,
+          "key": 0
+        }
+      ],
+      "data": {}
+    },
+    {
+      "key": "2uha5",
+      "text": "Line 5: 😎😺😷🙏😌😍🍾🤗👌💪🐌🏀🎵",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {}
+    }
+  ],
+  "entityMap": {
+    "0": {
+      "type": "LINK",
+      "mutability": "MUTABLE",
+      "data": {
+        "url": "http://google.com",
+        "targetOption": "_self"
+      }
+    }
+  }
+}

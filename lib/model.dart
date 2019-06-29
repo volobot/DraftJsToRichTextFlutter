@@ -41,7 +41,10 @@ class _InlineStyleRange {
   String style;
 
   bool contains(int index){
-    return offset <index&& index>(offset+length);
+    if((offset<=index) && (index<(offset+length))) {
+     return true;
+    }
+     return false;
   }
   _InlineStyleRange({this.offset, this.length, this.style});
 
@@ -56,7 +59,7 @@ class _InlineStyleRange {
   factory _InlineStyleRange.fromJson(Map<String, dynamic> map) =>
       _InlineStyleRange(
           offset: map["offset"] ?? 0,
-          length: map["lenght"] ?? 0,
+          length: map["length"] ?? 0,
           style: map["style"]);
 }
 
@@ -67,6 +70,12 @@ class _EntityRange {
 
   _EntityRange({this.offset, this.length, this.key});
 
+  bool contains(int index){
+    if((offset<=index) && (index<(offset+length))) {
+      return true;
+    }
+    return false;
+  }
   factory _EntityRange.fromJson(Map<String, dynamic> map) => _EntityRange(
       offset: map["offset"] ?? 0,
       length: map["length"] ?? 0,
