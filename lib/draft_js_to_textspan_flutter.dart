@@ -30,6 +30,8 @@ class DraftJSFlutter extends StatelessWidget {
               if (draftJsObject
                   .blocks[blockIndex].inlineStyleRanges[inlineStyleIndex]
                   .contains(textIndex)) {
+                print(draftJsObject.blocks[blockIndex]
+                    .inlineStyleRanges[inlineStyleIndex].style);
                 switch (draftJsObject.blocks[blockIndex]
                     .inlineStyleRanges[inlineStyleIndex].style) {
                   case "BOLD":
@@ -62,6 +64,7 @@ class DraftJSFlutter extends StatelessWidget {
         }
       }
     }
+    print(list.length);
     return list;
   }
 
