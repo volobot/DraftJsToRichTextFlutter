@@ -59,7 +59,7 @@ class DraftJSFlutter extends StatelessWidget {
           }
 
           list.add(TextSpan(
-            text: "\n",
+            text: " \n",
           ));
         }
       }
