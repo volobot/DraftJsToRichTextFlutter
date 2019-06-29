@@ -14,9 +14,9 @@ class _Block {
       this.inlineStyleRanges,
       this.entityRanges});
 
-  static List<_Block> getList(map) {
+  static List<_Block> getList(List<dynamic> map) {
     List<_Block> blocks = List();
-    for (int i = 0; i < map.lenght; i++) {
+    for (int i = 0; i < map.length; i++) {
       blocks.add(_Block.fromJson(map[i]));
     }
     return blocks;
