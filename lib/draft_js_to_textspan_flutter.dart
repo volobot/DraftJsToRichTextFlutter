@@ -50,7 +50,8 @@ class DraftJSFlutter extends StatelessWidget {
               }
             }
             list.add(TextSpan(
-                text: "a".substring(0,textIndex),
+                text: draftJsObject.blocks[blockIndex].text[textIndex]
+                    .substring(0, textIndex),
                 style: TextStyle(
                     color: textColor,
                     fontStyle: textFontStyle,
