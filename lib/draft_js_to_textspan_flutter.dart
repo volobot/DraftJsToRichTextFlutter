@@ -4,10 +4,10 @@ import 'package:draft_js_to_textspan_flutter/model.dart';
 import 'package:flutter/material.dart';
 
 class DraftJSFlutter extends StatelessWidget {
-  final String draftJsJsonString;
+
   final Map<String, dynamic> map;
 
-  DraftJSFlutter(this.draftJsJsonString, this.map);
+  DraftJSFlutter(this.map);
 
   List<TextSpan> getTextSpans() {
     List<TextSpan> list = List();
