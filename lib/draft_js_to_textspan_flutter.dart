@@ -29,7 +29,6 @@ class DraftJSFlutter extends StatelessWidget {
           int textLength = draftJsObject.blocks[blockIndex].text != null
               ? draftJsObject.blocks[blockIndex].text.runes.length
               : 0;
-          print("text lenght" + textLength.toString());
           for (int textIndex = 0; textIndex < textLength; textIndex++) {
             Color textColor = Colors.black;
             FontWeight textFontWeight = FontWeight.w400;

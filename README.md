@@ -1,14 +1,24 @@
-# draft_js_to_textspan_flutter
+# Draft Js to RichText Flutter
 
-A new Flutter package project.
+This is draft JS to TextSpan Rich text flutter.
 
 ## Getting Started
 
-This project is a starting point for a Dart
+This project takes draft js json (flutter Map) object and return Rich Text widget.
 [package](https://flutter.dev/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
+a library module containing code that can be used to show Rich Text in flutter application
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+## Dependency
+
+```
+draft_js_to_textspan_flutter: <version>
+```
+## Usage
+
+```dart
+@override
+   Widget build(BuildContext context) {
+     Map<String,dynamic> map=json.decode(draftJson);
+     return DraftJSFlutter(map);
+   }
+```
