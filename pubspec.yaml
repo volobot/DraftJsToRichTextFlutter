@@ -1,6 +1,6 @@
 name: draft_js_to_textspan_flutter
-description: It Converts draft js output to flutter rich text.
-version: 0.0.2
+description: It Converts draft js json to flutter rich text.
+version: 0.0.3
 author: Gurjap Singh <gurjap@volobot.com>
 homepage: https://www.volobot.com
 
