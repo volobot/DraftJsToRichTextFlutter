@@ -7,8 +7,8 @@ import 'package:url_launcher/url_launcher.dart';
 
 class DraftJSFlutter extends StatelessWidget {
   final Map<String, dynamic> map;
-
-  DraftJSFlutter(this.map);
+  final double fontSize;
+  DraftJSFlutter(this.map,this.fontSize);
 
   _launchURL(String link) async {
     if (await canLaunch(link)) {
@@ -86,7 +86,7 @@ class DraftJSFlutter extends StatelessWidget {
                     .toList()[textIndex]),
                 recognizer: recognizer,
                 style: TextStyle(
-                  fontSize: 18.0,
+                  fontSize: fontSize,
                     color: textColor,
                     fontStyle: textFontStyle,
                     fontWeight: textFontWeight,
