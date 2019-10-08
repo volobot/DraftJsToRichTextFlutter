@@ -86,6 +86,7 @@ class DraftJSFlutter extends StatelessWidget {
                     .toList()[textIndex]),
                 recognizer: recognizer,
                 style: TextStyle(
+                  fontSize: 18.0,
                     color: textColor,
                     fontStyle: textFontStyle,
                     fontWeight: textFontWeight,
